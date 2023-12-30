@@ -1,6 +1,7 @@
 import 'package:deelly/constants/app_colors.dart';
 import 'package:deelly/constants/styles.dart';
 import 'package:deelly/controllers/home_controller.dart';
+import 'package:deelly/views/home/product_detail_screen.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -376,70 +377,75 @@ class HomeScreen extends StatelessWidget {
                           padding: EdgeInsets.zero,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index){
-                            return Container(
-                              width: 265.w,
-                              margin: EdgeInsets.only(right: 12.w),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: 265.w,
-                                    height: 150.h,
-                                    decoration: BoxDecoration(
-                                      color: Colors.red,
-                                      borderRadius: BorderRadius.only(topRight: Radius.circular(10.r), topLeft: Radius.circular(10.r),),
-                                      image: const DecorationImage(
-                                        image: AssetImage("assets/images/Rectangle 34624588.png"),
-                                        fit: BoxFit.cover,
-                                      )
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
-                                      child: Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Image.asset("assets/icons/Frame 1000006276.png", scale: 5,),
-                                          Image.asset("assets/icons/Group 1000006892.png", scale: 4,),
-                                        ],
+                            return InkWell(
+                              onTap: (){
+                                Get.to(()=> const ProductDetailScreen());
+                              },
+                              child: Container(
+                                width: 265.w,
+                                margin: EdgeInsets.only(right: 12.w),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: 265.w,
+                                      height: 150.h,
+                                      decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        borderRadius: BorderRadius.only(topRight: Radius.circular(10.r), topLeft: Radius.circular(10.r),),
+                                        image: const DecorationImage(
+                                          image: AssetImage("assets/images/Rectangle 34624588.png"),
+                                          fit: BoxFit.cover,
+                                        )
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+                                        child: Row(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Image.asset("assets/icons/Frame 1000006276.png", scale: 5,),
+                                            Image.asset("assets/icons/Group 1000006892.png", scale: 4,),
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(height: 08.h,),
-                                  Text("Ristorante – Niko Romito", style: Styles.subHeading.copyWith(fontWeight: FontWeight.w500),),
-                                  Text("Dine and enjoy a 20% Discount", style: Styles.body.copyWith(color: const Color(0xffA3A7AC)),),
-                                  const Divider(
-                                    color: Color(0xffECECEC),
-                                    thickness: 2,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Image.asset("assets/icons/loc-icon.png", scale: 5,),
-                                      SizedBox(width: 04.w,),
-                                      Text("Ristorante L’Olivo at Al Mah... ", style: Styles.bodySmall.copyWith(color: const Color(0xffA4A7AC),),),
-                                      Text("+5 more", style: Styles.bodySmall.copyWith(color: const Color(0xff59B99D),),),
-                                    ],
-                                  ),
-                                  SizedBox(height: 08.h,),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                        children: [
-                                          Text("5.0", style: Styles.bodySmall.copyWith(color: const Color(0xffA4A7AC),),),
-                                          SizedBox(width: 04.w,),
-                                          Image.asset("assets/icons/Frame 1000006942.png", scale: 5,),
-                                          SizedBox(width: 04.w,),
-                                          Text("(7 Reviews)", style: Styles.bodySmall.copyWith(color: const Color(0xffA4A7AC),),),
-                                        ],
-                                      ),
-                                      Text("Sold: 7350", style: Styles.bodySmall.copyWith(color: const Color(0xffA4A7AC),),),
-                                    ],
-                                  ),
-                                ],
+                                    SizedBox(height: 08.h,),
+                                    Text("Ristorante – Niko Romito", style: Styles.subHeading.copyWith(fontWeight: FontWeight.w500),),
+                                    Text("Dine and enjoy a 20% Discount", style: Styles.body.copyWith(color: const Color(0xffA3A7AC)),),
+                                    const Divider(
+                                      color: Color(0xffECECEC),
+                                      thickness: 2,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Image.asset("assets/icons/loc-icon.png", scale: 5,),
+                                        SizedBox(width: 04.w,),
+                                        Text("Ristorante L’Olivo at Al Mah... ", style: Styles.bodySmall.copyWith(color: const Color(0xffA4A7AC),),),
+                                        Text("+5 more", style: Styles.bodySmall.copyWith(color: const Color(0xff59B99D),),),
+                                      ],
+                                    ),
+                                    SizedBox(height: 08.h,),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            Text("5.0", style: Styles.bodySmall.copyWith(color: const Color(0xffA4A7AC),),),
+                                            SizedBox(width: 04.w,),
+                                            Image.asset("assets/icons/Frame 1000006942.png", scale: 5,),
+                                            SizedBox(width: 04.w,),
+                                            Text("(7 Reviews)", style: Styles.bodySmall.copyWith(color: const Color(0xffA4A7AC),),),
+                                          ],
+                                        ),
+                                        Text("Sold: 7350", style: Styles.bodySmall.copyWith(color: const Color(0xffA4A7AC),),),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             );
                           },
