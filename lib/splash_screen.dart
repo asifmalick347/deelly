@@ -11,7 +11,6 @@ import 'package:get/get.dart';
 import 'views/auth/login_screen.dart';
 
 class SplashScreen extends StatelessWidget {
-   SplashScreen({super.key});
    AuthController authController = Get.put(AuthController(), tag: "authController");
 
   @override

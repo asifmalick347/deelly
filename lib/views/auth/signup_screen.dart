@@ -12,7 +12,6 @@ import '../../constants/app_colors.dart';
 import '../../constants/styles.dart';
 
 class SignupScreen extends StatelessWidget {
-  SignupScreen({super.key});
   AuthController authController = Get.find(tag: "authController");
   final signupKey = GlobalKey<FormState>();
 

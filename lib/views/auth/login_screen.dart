@@ -15,7 +15,6 @@ import '../../constants/app_colors.dart';
 import '../../constants/styles.dart';
 
 class SignInScreen extends StatelessWidget {
-  SignInScreen({super.key});
   AuthController authController = Get.find(tag: "authController");
   final loginKey = GlobalKey<FormState>();
   @override
@@ -123,7 +122,7 @@ class SignInScreen extends StatelessWidget {
                                   activeColor: AppColors.primaryColor,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(04),
-                                      side: BorderSide(width: 0.5)),
+                                      side: const BorderSide(width: 0.5)),
                                   onChanged: (bool? value) {
                                     authController
                                         .isPrivacyPolicyChecked.value = value!;
